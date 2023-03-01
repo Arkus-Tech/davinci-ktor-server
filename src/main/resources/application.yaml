@@ -1,0 +1,13 @@
+ktor:
+  application:
+    modules:
+      - io.davinci.ApplicationKt.module
+  development: true
+  deployment:
+    port: 8080
+    watch:
+      - classes
+      - resources
+  secrets:
+    trello: $TRELLO_API_KEY
+    openai: $OPENAI_API_KEY
