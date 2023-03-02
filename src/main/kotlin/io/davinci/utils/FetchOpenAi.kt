@@ -15,7 +15,7 @@ suspend inline fun HttpClient.fetchOpenAi(
   openAiKey: String
 ): suspend (
   projectDescription: String) -> HttpResponse {
-  return { projectDescription ->
+  return { prompt ->
     this.post("https://api.openai.com/v1/completions") {
       headers {
         append(HttpHeaders.Authorization, "Bearer $openAiKey")
@@ -23,9 +23,9 @@ suspend inline fun HttpClient.fetchOpenAi(
       contentType(ContentType.Application.Json)
       setBody(OpenAiRequest(
         model = "text-davinci-003",
-        prompt = projectDescription.wrapWithProjectBoardFilter(),
+        prompt = prompt,
         temperature = 0.9f,
-        maxTokens = 300,
+        maxTokens = 3000,
         topP = 1.0f,
         frequencyPenalty = 0.0f,
         presencePenalty = 0.0f

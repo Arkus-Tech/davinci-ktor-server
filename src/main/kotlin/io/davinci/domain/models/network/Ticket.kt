@@ -1,11 +1,11 @@
 package io.davinci.domain.models.network
 
-import com.fasterxml.jackson.annotation.JsonCreator
-import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.Serializable
 
-data class Ticket @JsonCreator constructor(
-  @JsonProperty("title") val title: String,
-  @JsonProperty("scope") val scope: String,
-  @JsonProperty("acceptanceCriteria") val acceptanceCriteria: List<String>,
-  @JsonProperty("helpfulResources") val helpfulResources: List<String>
+@Serializable
+data class Ticket(
+  val title: String,
+  val scope: String,
+  val acceptanceCriteria: List<String>,
+  val helpfulResources: List<String>
 )

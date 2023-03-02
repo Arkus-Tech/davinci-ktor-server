@@ -5,4 +5,5 @@ import io.davinci.domain.models.network.ProjectBoard
 
 interface OpenAiApi {
   suspend fun generateProjectBoard(projectDescription: String): NetworkState<ProjectBoard>
+  suspend fun refineProjectBoard(refinementSpec: String, oldProjectBoard: ProjectBoard): NetworkState<ProjectBoard>
 }

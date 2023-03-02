@@ -9,5 +9,5 @@ ktor:
       - classes
       - resources
   secrets:
-    trello: $TRELLO_API_KEY
-    openai: $OPENAI_API_KEY
+    trello: 0f8d5021c6c34491c09a65c10026d9ae
+    openai: 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

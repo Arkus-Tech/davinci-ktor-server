@@ -24,9 +24,9 @@ fun Application.getKoinModule(): Module {
       }
     }
     install(Logging)
-//    install(HttpTimeout) {
-//      requestTimeoutMillis = 120000
-//    }
+    install(HttpTimeout) {
+      requestTimeoutMillis = 120000
+    }
   }
   val trelloApiKey = environment.config.propertyOrNull("ktor.secrets.trello")?.getString() ?: ""
   val openAiApiKey = environment.config.propertyOrNull("ktor.secrets.openai")?.getString() ?: ""

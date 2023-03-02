@@ -2,6 +2,7 @@ package io.davinci.plugins
 
 import io.davinci.routes.createProjectBoard
 import io.davinci.routes.generateProjectBoard
+import io.davinci.routes.refineProjectBoard
 import io.ktor.server.application.Application
 import io.ktor.server.application.call
 import io.ktor.server.response.respondText
@@ -18,6 +19,7 @@ fun Application.configureRouting() {
     route("/api/v1") {
       createProjectBoard()
       generateProjectBoard()
+      refineProjectBoard()
     }
 
   }
